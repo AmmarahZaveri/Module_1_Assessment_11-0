@@ -49,8 +49,25 @@ const pinkPrice = .55
     Log `totalAcres` to the console.
 */
 
-// CODE HERE
-
+//First I am going to find out how many total fuji apples were picked the entire week
+let fuji_sum = 0;
+for(let i = 0; i < fujiAcres.length ; i++){
+    fuji_sum=fuji_sum+fujiAcres[i];
+}
+//Next I am going to find out how many total gala apples were picked the entire week
+let gala_sum = 0;
+for(let i = 0; i < galaAcres.length ; i++){
+    gala_sum=gala_sum+galaAcres[i];
+}
+//Next I am going to find out how many total pink apples were picked the entire week
+let pink_sum = 0;
+for(let i = 0; i < pinkAcres.length ; i++){
+    pink_sum=pink_sum+pinkAcres[i];
+}
+//Now I am going to add all three sums together to find the total amount of all apples for the week
+let totalAcres = fuji_sum + gala_sum + pink_sum
+//Finally I am going to log the total amount
+console.log(totalAcres);
 
 
 
@@ -67,7 +84,10 @@ const pinkPrice = .55
     Log `averageDailyAcres` to the console.
 */
 
-// CODE HERE
+//First I am going to divde the total amount of acres in a week into 7 since there are 7 days in a week to find the averge amount
+let averageDailyAcres = totalAcres/7
+//Now I am going to print out the average amount of acres per day.
+console.log(averageDailyAcres)
 
 
 
@@ -101,11 +121,20 @@ const pinkPrice = .55
     any Math methods. 
 
 */
-
 let acresLeft = 174 
 let days = 0
 
-// CODE HERE
+//First I declare that while the acres that are left are more than zero...
+while (acresLeft > 0) {
+    //every time there are acres left, a day will be added to the timeline...
+    days = days + 1
+    //As well as 9 acres will have been dealt with so I will remove them.
+    acresLeft = acresLeft - 9
+}
+//Lastly I will print to see exactly how many days it would take to finish off the rest of the acres left
+console.log(days)
+
+
 
 
 
