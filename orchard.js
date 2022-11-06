@@ -162,12 +162,26 @@ console.log(days)
     values to the new arrays.
 */
 
-// CODE HERE
-
-// let fujiTons =
-// let galaTons =
-// let pinkTons =
-
+//First I make sure to copy or "slice" the original arrays. Now I can do the math to see how many apples are picked every day
+let fujiTons = fujiAcres.slice()
+let galaTons = galaAcres.slice()
+let pinkTons = pinkAcres.slice()
+//Since I kno whow many acres are picked per day per week I can now multiply each acre by 6.5 to find ho wmany fuji apples were picked out per day.
+for(let i=0; i < fujiTons.length; i++){
+    fujiTons[i] = fujiTons[i]*6.5
+}
+//Since I kno whow many acres are picked per day per week I can now multiply each acre by 6.5 to find ho wmany gala apples were picked out per day.
+for(let i=0; i < galaTons.length; i++){
+    galaTons[i] = galaTons[i]*6.5
+}
+//Since I kno whow many acres are picked per day per week I can now multiply each acre by 6.5 to find ho wmany pink apples were picked out per day.
+for(let i=0; i < pinkTons.length; i++){
+    pinkTons[i] = pinkTons[i]*6.5
+}
+//Now I am just going to print out the finall arrays to see exactlt how many tons of all three apples are picked every day of the week.
+console.log(fujiTons);
+console.log(galaTons);
+console.log(pinkTons)
 
 
 
@@ -188,12 +202,26 @@ console.log(days)
 
     Hint: there are 2000 pounds in a ton.
 */
-
-// CODE HERE 
-
-// let fujiPounds =
-// let galaPounds =
-// let pinkPounds =
+//First I am going to declare these variables as zero so I can change the tons to pounds first
+let fujiPounds = 0;
+let galaPounds = 0;
+let pinkPounds = 0;
+//I am going to start off with the fuji apples, this way I am adding the tons, turning them to pounds AND declaring them to the variable I want
+for (let i = 0; i < fujiTons.length; i++) {
+    fujiPounds += fujiTons[i]*2000;
+}
+//I am going to do the same with the gala aplles, three steps in one
+for (let i = 0; i < galaTons.length; i++) {
+    galaPounds += galaTons[i]*2000;
+}
+//Same thing with the pink apples!!
+for (let i = 0; i < pinkTons.length; i++) {
+    pinkPounds += pinkTons[i]*2000;
+}
+//Now I am just going to print out all three amounts.
+console.log(fujiPounds);
+console.log(galaPounds);
+console.log(pinkPounds);
 
 
 
@@ -215,14 +243,15 @@ console.log(days)
     Log each of the profits to the 
     console. 
 */
-
-// CODE HERE
-
-// let fujiProfit =
-// let galaProfit =
-// let pinkProfit =
-
-
+//First I am going to multiply the amount in pounds of apples to the amount given
+let fujiProfit = fujiPounds*0.89
+//I do the same for the gala and pink apples
+let galaProfit = galaPounds*0.64
+let pinkProfit = pinkPounds*0.55
+//Now I will just print all three
+console.log(fujiProfit);
+console.log(galaProfit);
+console.log(pinkProfit);
 
 
 
@@ -236,5 +265,8 @@ console.log(days)
 
     Log `totalProfit` to the console.
 */
-
-// CODE HERE
+//First I declare the total profit variable, then I add all the progit from all the apples.
+let totalProfit = fujiProfit + galaProfit + pinkProfit;
+//Then I just print out the total profit made.
+console.log(totalProfit)
+//DONE
